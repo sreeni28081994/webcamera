@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Toggle Rear and Back Camera with Picture Capture Using Javascript Api</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container p-5" align="center">
+
+
+
+
+
+
+  <div id="basediv">
+
+  </div>
+    <div style="border: 3px solid black;width: 192px;height:192px" id="picdiv"><img src="" class="profile-img" style="opacity: 0;" id="#image_preview"></div> 
+
+  <!--<div style="border: 3px solid black;width: 192px;height:192px" id="picdiv"><img src="" class="profile-img" style="opacity: 0;" id="img"></div>  -->
+  <canvas id="canvas" class="bg-light shadow border border-5 border-success">
+    </canvas>
+    <video id="camera-stream" class="border border-5 border-danger"></video> 
+
+
+    <!-------above are boxes-->
+
+
+
+<!------
+  <div class="">
+    <b>Your Cam:</b><br>
+ <!-----  <video id="camera-stream" class="border border-5 border-danger"></video>  
+    <div class="preview">
+      <p class="no-pic">No Pic uploaded</p>
+     <!----- <div style="border: 3px solid black;width: 192px;height:192px" id="picdiv"><img src="" class="profile-img" style="opacity: 0;"></div>
+    </div>    
+  </div>    ---->
+  <div class=" buttonsdiv">
+    <button disabled id="flip-btn" class="btn btn-sm btn-warning">
+      Flip Camera
+    </button>
+    <label for="image_uploads" class="img-upload-btn" onclick="dispdoc()">Upload </label>  
+       <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" style="opacity: 0;position: absolute;z-index: -1;" >
+     <div style="display: inline-block; position: relative;">
+    <button id="webbtn" class="btn btn-sm btn-success" onclick="dispweb()">Display web</button>
+    <button id="capture-camera" class="btn btn-sm btn-primary"  onclick="dispcaptureimage()">
+      Take photo
+    </button>
+    <button id="clear" class="btn btn-sm btn-primary"  onclick="resetForm() ">Clear</button>
+
+     </div>
+
+<!------
+    <div>
+
+      <label for="image_uploads" class="img-upload-btn" onclick="dispdoc()">Upload </label> 
+      <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" style="opacity: 0;">
+    </div>   ---->
+  </div>
+  
+<!-----
+  <div class="mt-3">
+    <b>Output:</b>
+    <br>
+   <!------- <canvas id="canvas" class="bg-light shadow border border-5 border-success">
+    </canvas>  
+  </div>
+</div>
+---->
+
+
+<script>
+  var a=1
+  function dispweb(){
+    if(a==1){
+      a++;
+    document.getElementById("basediv").style.display="none"
+    document.getElementById("picdiv").style.display="none"
+    document.getElementById("camera-stream").style.display="inline-block"
+    document.getElementById("capture-camera").style.display="inline-block"
+
+  }
+}
+
+  function dispdoc(){
+
+    document.getElementById("basediv").style.display="none"
+    document.getElementById("picdiv").style.display="inline-block"
+    document.getElementById("camera-stream").style.display="none"
+    document.getElementById("canvas").style.display="none"
+    document.getElementById("capture-camera").style.display="none"
+    document.getElementById("img").style.display="inline-block"
+
+
+
+
+  }
+
+  function dispcaptureimage(){
+    document.getElementById("camera-stream").style.display="none"
+
+    document.getElementById("canvas").style.display="inline-block"
+    document.getElementById("capture-camera").style.display="none"
+
+  }
+
+
+
+</script>
+
+
+
+
+<style>
+
+  .buttonsdiv{
+    margin-top: 20px;
+  }
+  #basediv{
+    width: 192px;
+    height: 192px;
+    background-color: brown;
+    display: inline-block;
+  }
+
+
+  #picdiv{
+    display: none;
+  }
+  #camera-stream{
+    display: none;
+  }
+  #capture-camera{
+    transition: 3.5s all;
+    display: none;
+    position:absolute;
+    top: 50px;
+    left: 0px;
+  }
+  #canvas{
+    display:none ;
+  }
+
+
+  .img-upload-btn {
+    border: 1px solid black;
+    padding: 10px 20px;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    border-radius: .2rem;
+    background-color: rgb(247, 0, 255);
+}
+#img{
+  width: 186px;
+  height: 186px;
+}
+#flip-btn{
+  display: none;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!----photo--
+<div class="img-wrapper">
+  <div>
+    <label for="image_uploads" class="img-upload-btn">Upload </label>
+    <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" style="opacity: 0;">
+  </div>
+  <br>
+  <div class="preview">
+    <p class="no-pic">No Pic uploaded</p>
+    <img src="" class="profile-img" style="opacity: 0;">
+  </div>
+</div>
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script><script  src="./script.js"></script>
+
+  <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

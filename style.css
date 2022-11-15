@@ -1,0 +1,32 @@
+video  {
+  width: 192px;
+  height: 192px;
+  background: rgba(0,0,0,0.2);
+  -webkit-transform: scaleX(-1); /* mirror effect while using front cam */
+  transform: scaleX(-1);         /* mirror effect while using front cam */
+}
+
+#canvas  {
+  width: 192px;
+  height: 192px;
+  -webkit-transform: scaleX(-1); /* mirror effect while using front cam */
+  transform: scaleX(-1);         /* mirror effect while using front cam */
+}
+
+
+
+
+.profile-img {
+  width: 192px;
+  height: 192px;
+ 
+}
+
+.img-upload-btn {
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+
+.img-wrapper {
+  padding: 20px;
+}
